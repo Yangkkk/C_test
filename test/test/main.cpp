@@ -4,25 +4,43 @@
 #include <iostream>
 #include <sstream>
 using namespace std;
-class A
-{
-private:
-	int v;
-public: 
-	A(int i){
-		cout << "1" << endl;
-		v = i;
+class Ctyre{
+public:
+	Ctyre()
+	{
+		cout << "Ctyre conductor" << endl;
 	}
-	A(){ cout << "2" << endl; }
+	~Ctyre(){
+		cout << "Ctyre destructor" << endl;
+	}
+};
+class  Cengine
+{
+public:
+	Cengine(){
+		cout << "engine conductor" << endl;
+	}
+	~Cengine(){
+		cout << "engine destructor" << endl;
+	}
+};
+class Ccar
+{
+public:
+	Ccar(){
+		cout << "Ccar conductor" << endl;
+	}
+	~Ccar(){
+		cout << "Ccar desductor" << endl;
+	}
+
+private:
+	Cengine engine;
+	Ctyre tyre;
 };
 int main()
 {
-	A a1(4);
-	A a2 = 5;
-	A a3;
-	a3 = 9;
-	A a4, a5;
-	a4 = a5;
-	getchar();
+	Ccar car;
+	system("pause");
 	return 0;
 }
